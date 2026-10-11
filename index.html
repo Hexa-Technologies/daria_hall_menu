@@ -432,7 +432,7 @@
     frame.className = "branch-frame";
     frame.title = branchTitle.textContent;
     frame.addEventListener("load", function(){ tuneBranchFrame(frame); });
-    frame.src = link.getAttribute("href");
+    frame.src = new URL(url, window.location.href).href;
     branchWrap.appendChild(frame);
 
     branchViewer.classList.add("open");
